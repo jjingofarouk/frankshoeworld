@@ -46,8 +46,29 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6 col-12">
-                            <div class="product-thumb">
-                                <img src="/api/placeholder/400/400" class="img-fluid product-image" alt="Custom Nike Air Force 1 Sneakers">
+                            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="nike.jpg" class="d-block w-100" alt="Custom Nike Air Force 1 Sneakers - Front View">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="nike2.jpg" class="d-block w-100" alt="Custom Nike Air Force 1 Sneakers - Side View">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="nike3.jpg" class="d-block w-100" alt="Custom Nike Air Force 1 Sneakers - Back View">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="nike4.jpg" class="d-block w-100" alt="Custom Nike Air Force 1 Sneakers - Top View">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                             </div>
                         </div>
 
@@ -93,16 +114,8 @@
                 </div>
             </section>
 
-            <section class="related-product section-padding border-top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <h3 class="mb-5">You might also like</h3>
-                        </div>
-                        <!-- Related sneaker products -->
-                    </div>
-                </div>
-            </section>
+            <!-- Rest of the HTML remains the same -->
+
         </main>
 
         <footer class="site-footer">
