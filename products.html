@@ -671,6 +671,31 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item">
                                 <a class="page-link" href="#">Next</a>
+                                <style>
+                                    .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-btn {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.page-btn.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.page-btn:hover {
+    background-color: #ddd;
+}
+
+                                </style>
                             </li>
                         </ul>
                     </nav>
@@ -846,6 +871,79 @@
 
 <!-- JavaScript to toggle the chat window -->
 <script>
+    const products = [
+    /* Array of product objects */
+    /* Example: { title: "Canvas Men Shoes", price: "UGX.90,000", image: "canvas.jpg", rating: 4.5, reviews: 120 } */
+];
+
+const productsPerPage = 10;
+let currentPage = 1;
+
+function displayProducts(page) {
+    const start = (page - 1) * productsPerPage;
+    const end = start + productsPerPage;
+    const paginatedProducts = products.slice(start, end);
+
+    const productContainer = document.getElementById('product-container');
+    productContainer.innerHTML = '';
+
+    paginatedProducts.forEach(product => {
+        const productCard = `
+            <div class="product-card">
+                <img src="${product.image}" alt="${product.title}" class="product-image w-100">
+                <div class="product-details">
+                    <h3 class="product-title">${product.title}</h3>
+                    <p class="product-price">${product.price}</p>
+                    <div class="product-rating">
+                        <!-- Stars based on rating -->
+                        ${getStars(product.rating)}
+                        <span class="ms-2">${product.rating} (${product.reviews} reviews)</span>
+                    </div>
+                    <button class="btn btn-primary mt-3">Add to Cart</button>
+                </div>
+            </div>
+        `;
+        productContainer.innerHTML += productCard;
+    });
+
+    updatePagination(page);
+}
+
+function getStars(rating) {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating % 1 !== 0 ? 1 : 0;
+    const emptyStars = 5 - fullStars - halfStar;
+
+    return `${'<i class="bi bi-star-fill"></i>'.repeat(fullStars)}
+            ${'<i class="bi bi-star-half"></i>'.repeat(halfStar)}
+            ${'<i class="bi bi-star"></i>'.repeat(emptyStars)}`;
+}
+
+function updatePagination(currentPage) {
+    const paginationContainer = document.getElementById('pagination');
+    paginationContainer.innerHTML = '';
+
+    const totalPages = Math.ceil(products.length / productsPerPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+        const pageButton = document.createElement('button');
+        pageButton.textContent = i;
+        pageButton.classList.add('page-btn');
+        if (i === currentPage) {
+            pageButton.classList.add('active');
+        }
+
+        pageButton.addEventListener('click', () => {
+            displayProducts(i);
+        });
+
+        paginationContainer.appendChild(pageButton);
+    }
+}
+
+// Initialize the first page
+displayProducts(currentPage);
+
   document.querySelector('.btn-primary').addEventListener('click', function() {
     document.getElementById('live-chat-window').style.display = 'block';
   });
