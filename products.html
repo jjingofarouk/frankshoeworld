@@ -1,51 +1,34 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Discover a wide range of quality footwear at Frank Fashions">
-    <meta name="author" content="Frank Fashions">
-    <title>Frank Fashions - Footwear Collection</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="css/tooplate-little-fashion.css" rel="stylesheet">
-    <style>
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .product-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: box-shadow 0.3s ease;
-        }
-        .product-card:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .product-image {
-            height: 200px;
-            object-fit: cover;
-        }
-        .product-details {
-            padding: 15px;
-        }
-        .product-title {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-        .product-price {
-            font-weight: bold;
-            color: #007bff;
-        }
-        .product-rating {
-            color: #ffc107;
-        }
-    </style>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Frank Fashions</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/slick.css"/>
+
+        <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+<!--
+
+Tooplate 2127 Frank Fashions
+
+https://www.tooplate.com/view/2127-little-fashion
+
+-->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -181,10 +164,51 @@
         </section>
     </main>
 
-    <footer class="bg-dark text-white py-4">
-        <!-- Footer content (unchanged) -->
-    </footer>
+           <footer class="site-footer">
+            <div class="container">
+                <div class="row">
 
+                    <div class="col-lg-3 col-10 me-auto mb-4">
+                        <h4 class="text-white mb-3"><a href="index.html">Frank</a> Fashions</h4>
+                        <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2024 <strong>Frank Fashions</strong></p>
+                        <br>
+                        <p class="copyright-text">Designed by <a href="https://jingofarouk.github.io/fresh//" target="_blank">Jjingo Farouq</a></p>
+                    </div>
+
+                    <div class="col-lg-5 col-8">
+                        <h5 class="text-white mb-3">Sitemap</h5>
+
+                        <ul class="footer-menu d-flex flex-wrap">
+                            <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">Story</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Products</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy policy</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">FAQs</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-4">
+                        <h5 class="text-white mb-3">Social</h5>
+
+                        <ul class="social-icon">
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-skype"></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -195,6 +219,14 @@
         document.getElementById('list-view').addEventListener('click', function() {
             document.querySelector('.product-grid').style.display = 'block';
         });
+        
     </script>
+      <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/Headroom.js"></script>
+        <script src="js/jQuery.headroom.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/custom.js"></script>
 </body>
 </html>
