@@ -51,3 +51,90 @@
     left: -50%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
 }
+:root {
+    --white-color: #FFFFFF;
+    --primary-color: #FF4400;
+    --section-bg-color: #f0f8ff;
+    --dark-color: #000000;
+    --grey-color: #d0d1d1;
+    --p-color: #717275;
+}
+
+.site-footer {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.site-footer h4, 
+.site-footer h5 {
+    color: var(--white-color);
+}
+
+.site-footer p {
+    color: var(--p-color);
+}
+
+.site-footer a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.site-footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.site-footer ul li {
+    margin-bottom: 10px;
+}
+
+.site-footer .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.site-footer .btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
+}
+
+.site-footer .btn-light {
+    background-color: var(--white-color);
+    border-color: var(--grey-color);
+}
+
+.site-footer .btn-light:hover {
+    background-color: var(--grey-color);
+    border-color: var(--grey-color);
+}
+
+.site-footer .card {
+    background-color: var(--white-color);
+}
+
+.site-footer .card-header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.site-footer .card-body {
+    color: var(--p-color);
+}
+
+.site-footer .product-p {
+    color: var(--p-color);
+}
+
+footer .container {
+    padding: 0 15px;
+}
+
+footer .section {
+    background-color: var(--section-bg-color);
+    padding: 30px 15px;
+}
