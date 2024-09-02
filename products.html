@@ -947,6 +947,91 @@ displayProducts(currentPage);
   document.querySelector('.btn-primary').addEventListener('click', function() {
     document.getElementById('live-chat-window').style.display = 'block';
   });
+    // Sample product data
+const products = [
+    { id: 1, name: "Canvas Men Shoes", price: 90000, category: "casual", image: "canvas.jpg", rating: 4.5 },
+    { id: 2, name: "Leather Formal Shoes", price: 150000, category: "formal", image: "leather-formal.jpg", rating: 4.2 },
+    { id: 3, name: "Running Sneakers", price: 120000, category: "sports", image: "running-sneakers.jpg", rating: 4.7 },
+    { id: 4, name: "Children's School Shoes", price: 70000, category: "children", image: "school-shoes.jpg", rating: 4.0 },
+    // Add more products as needed
+];
+
+function createProductCard(product) {
+    return `
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${product.name}</h5>
+                    <p class="card-text">UGX ${product.price.toLocaleString()}</p>
+                    <p class="card-text">Rating: ${product.rating}/5</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                    <button class="btn btn-outline-secondary mt-2" onclick="quickView(${product.id})">Quick View</button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function renderProducts(productsToRender) {
+    const productGrid = document.getElementById('product-grid');
+    productGrid.innerHTML = productsToRender.map(createProductCard).join('');
+}
+
+function filterProducts() {
+    const category = document.getElementById('category-filter').value;
+    const minPrice = parseInt(document.getElementById('min-price').value) || 0;
+    const maxPrice = parseInt(document.getElementById('max-price').value) || Infinity;
+
+    const filteredProducts = products.filter(product => 
+        (category === 'all' || product.category === category) &&
+        product.price >= minPrice &&
+        product.price <= maxPrice
+    );
+
+    renderProducts(filteredProducts);
+}
+
+function sortProducts() {
+    const sortBy = document.getElementById('sort-select').value;
+    let sortedProducts = [...products];
+
+    switch(sortBy) {
+        case 'price-low-high':
+            sortedProducts.sort((a, b) => a.price - b.price);
+            break;
+        case 'price-high-low':
+            sortedProducts.sort((a, b) => b.price - a.price);
+            break;
+        case 'rating':
+            sortedProducts.sort((a, b) => b.rating - a.rating);
+            break;
+    }
+
+    renderProducts(sortedProducts);
+}
+
+function quickView(productId) {
+    const product = products.find(p => p.id === productId);
+    const modalBody = document.querySelector('#quickViewModal .modal-body');
+    modalBody.innerHTML = `
+        <img src="${product.image}" class="img-fluid mb-3" alt="${product.name}">
+        <h5>${product.name}</h5>
+        <p>Price: UGX ${product.price.toLocaleString()}</p>
+        <p>Rating: ${product.rating}/5</p>
+        <button class="btn btn-primary">Add to Cart</button>
+    `;
+    $('#quickViewModal').modal('show');
+}
+
+// Initial render
+renderProducts(products);
+
+// Event listeners
+document.getElementById('category-filter').addEventListener('change', filterProducts);
+document.getElementById('min-price').addEventListener('input', filterProducts);
+document.getElementById('max-price').addEventListener('input', filterProducts);
+document.getElementById('sort-select').addEventListener('change', sortProducts);
 </script>
 
             </div>
