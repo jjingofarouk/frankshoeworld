@@ -11,13 +11,46 @@ https://www.tooplate.com/view/2127-little-fashion
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
-  --white-color:                #FFFFFF;
-  --primary-color:              #FF4400;
-  --section-bg-color:           #f0f8ff;
-  --dark-color:                 #000000;
-  --grey-color:                 #d0d1d1;
-  --p-color:                    #717275;
+  /* Primary Colors */
+  --primary-color:              #3D5A80; /* Deep Blue */
+  --secondary-color:            #98C1D9; /* Light Blue */
+  --accent-color:               #EE6C4D; /* Coral */
 
+  /* Neutral Colors */
+  --white-color:                #FFFFFF; /* Pure White */
+  --off-white-color:            #F8F8F8; /* Soft White for backgrounds */
+  --light-gray-color:           #E0E0E0; /* Light Gray for borders and dividers */
+  --medium-gray-color:          #9E9E9E; /* Medium Gray for secondary text */
+  --dark-gray-color:            #424242; /* Dark Gray for primary text */
+
+  /* Functional Colors */
+  --success-color:              #4CAF50; /* Green for success messages */
+  --warning-color:              #FFC107; /* Amber for warnings */
+  --error-color:                #F44336; /* Red for errors */
+
+  /* Background Colors */
+  --body-bg-color:              var(--off-white-color);
+  --card-bg-color:              var(--white-color);
+  --footer-bg-color:            var(--primary-color);
+
+  /* Text Colors */
+  --body-text-color:            var(--dark-gray-color);
+  --heading-color:              var(--primary-color);
+  --link-color:                 var(--accent-color);
+  --link-hover-color:           #D95C41; /* Darker shade of accent color */
+
+  /* Button Colors */
+  --button-primary-bg:          var(--accent-color);
+  --button-primary-text:        var(--white-color);
+  --button-secondary-bg:        var(--secondary-color);
+  --button-secondary-text:      var(--primary-color);
+
+  /* Other UI Elements */
+  --input-border-color:         var(--light-gray-color);
+  --input-focus-border-color:   var(--secondary-color);
+  --badge-bg-color:             var(--secondary-color);
+  --badge-text-color:           var(--primary-color);
+}
   --body-font-family:           'Inter', sans-serif;
 
   --h5-font-size:               24px;
