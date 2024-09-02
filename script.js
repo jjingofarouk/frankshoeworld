@@ -48,6 +48,14 @@ const products = [
                 liveChatWindow.style.display = 'none';
             }
         });
+document.getElementById('liveChatButton').addEventListener('click', function() {
+    var chatWindow = document.getElementById('liveChatWindow');
+    if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+        chatWindow.style.display = 'block';
+    } else {
+        chatWindow.style.display = 'none';
+    }
+});
 
         // Optional: Close the chat window when clicking outside of it
         document.addEventListener('click', function(event) {
