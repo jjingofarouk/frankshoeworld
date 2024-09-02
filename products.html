@@ -685,7 +685,6 @@
           <footer class="site-footer bg-dark text-light py-5">
     <div class="container">
         <div class="row">
-
             <!-- About Section -->
             <div class="col-lg-3 col-md-6 mb-4">
                 <h4 class="text-white mb-3"><a href="index.html" class="text-light">Frank Fashions</a></h4>
@@ -693,8 +692,18 @@
                 <p class="text-muted">Designed by <a href="https://jingofarouk.github.io/fresh/" target="_blank" class="text-light">Jjingo Farouq</a></p>
             </div>
 
+            <!-- Contact Information Section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-white mb-3">Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-house-door"></i> 123 Main Street, Kampala</li>
+                    <li><i class="bi bi-envelope"></i> <a href="mailto:info@frankfashions.com" class="text-light">info@frankfashions.com</a></li>
+                    <li><i class="bi bi-telephone"></i> <a href="tel:+256123456789" class="text-light">+256 123 456 789</a></li>
+                </ul>
+            </div>
+
             <!-- Sitemap Section -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-3 col-md-6 mb-4">
                 <h5 class="text-white mb-3">Sitemap</h5>
                 <ul class="list-unstyled">
                     <li><a href="about.html" class="text-light">Story</a></li>
@@ -705,8 +714,8 @@
                 </ul>
             </div>
 
-            <!-- Social Section -->
-            <div class="col-lg-5 col-md-12 mb-4">
+            <!-- Follow Us Section -->
+            <div class="col-lg-3 col-md-12 mb-4">
                 <h5 class="text-white mb-3">Follow Us</h5>
                 <ul class="list-unstyled d-flex">
                     <li class="me-3"><a href="#" class="text-light fs-4"><i class="bi bi-youtube"></i></a></li>
@@ -715,7 +724,6 @@
                     <li><a href="#" class="text-light fs-4"><i class="bi bi-skype"></i></a></li>
                 </ul>
             </div>
-
         </div>
 
         <!-- Newsletter Section -->
@@ -728,74 +736,49 @@
             </form>
         </section>
 
-        <!-- Customer Reviews Section -->
-        <section class="my-5">
-            <h2 class="text-center mb-4">What Our Customers Say</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <blockquote class="blockquote">
-                        <p>"Great quality and fast delivery! Highly recommend Frank Fashions."</p>
-                        <footer class="blockquote-footer">Jane Doe, <cite title="Source Title">Verified Buyer</cite></footer>
-                    </blockquote>
-                </div>
-                <div class="col-md-4">
-                    <blockquote class="blockquote">
-                        <p>"The best place to find comfortable and stylish shoes!"</p>
-                        <footer class="blockquote-footer">John Smith, <cite title="Source Title">Loyal Customer</cite></footer>
-                    </blockquote>
-                </div>
-                <div class="col-md-4">
-                    <blockquote class="blockquote">
-                        <p>"Excellent customer service and top-notch footwear."</p>
-                        <footer class="blockquote-footer">Alice Johnson, <cite title="Source Title">Fashion Enthusiast</cite></footer>
-                    </blockquote>
-                </div>
+        <!-- Store Locations Section -->
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-white mb-3">Our Stores</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">Store 1 - Kampala</a></li>
+                    <li><a href="#" class="text-light">Store 2 - Entebbe</a></li>
+                    <li><a href="#" class="text-light">Store 3 - Jinja</a></li>
+                </ul>
             </div>
-        </section>
 
-        <!-- Comparison & Product Actions Section -->
-        <div class="d-flex justify-content-between">
-            <div>
-                <input type="checkbox" id="compare-product-1" class="me-2">
-                <label for="compare-product-1">Compare</label>
+            <!-- Policies Section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-white mb-3">Policies</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy-policy.html" class="text-light">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html" class="text-light">Terms of Service</a></li>
+                    <li><a href="return-policy.html" class="text-light">Return Policy</a></li>
+                </ul>
             </div>
-            <div>
-                <button class="btn btn-outline-secondary me-2" title="Add to Wishlist"><i class="bi bi-heart"></i></button>
-                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#quickViewModal">Quick View</button>
-            </div>
-        </div>
 
-        <!-- Quick View Modal -->
-        <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="quickViewModalLabel">Product Name</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="/api/placeholder/250/200" alt="Product Image" class="img-fluid mb-3">
-                        <p class="product-price">UGX.140,000</p>
-                        <p>Product details and description...</p>
-                        <div class="product-rating mb-3">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-half"></i>
-                            <span class="ms-2">4.5 (120 reviews)</span>
-                        </div>
-                        <button class="btn btn-primary">Add to Cart</button>
-                    </div>
-                </div>
+            <!-- Awards & Certifications Section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-white mb-3">Awards & Certifications</h5>
+                <ul class="list-unstyled">
+                    <li><img src="path/to/award1.png" alt="Award 1" class="img-fluid" width="100"></li>
+                    <li><img src="path/to/award2.png" alt="Award 2" class="img-fluid" width="100"></li>
+                </ul>
+            </div>
+
+            <!-- Accessibility Section -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <h5 class="text-white mb-3">Accessibility</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">Accessibility Features</a></li>
+                    <li><a href="#" class="text-light">Assistive Technologies</a></li>
+                </ul>
             </div>
         </div>
 
         <!-- Live Chat Button & Window -->
-       <button class="btn btn-primary position-fixed bottom-0 end-0 mb-3 me-3" id="liveChatButton">
-    <i class="bi bi-chat-dots"></i> Live Chat
-
-          
+        <button class="btn btn-primary position-fixed bottom-0 end-0 mb-3 me-3" id="liveChatButton">
+            <i class="bi bi-chat-dots"></i> Live Chat
         </button>
         <div id="live-chat-window" class="card position-fixed bottom-0 end-0 mb-3 me-3" style="display: none;">
             <div class="card-header bg-primary text-white">
@@ -808,9 +791,9 @@
                 <button class="btn btn-primary">Send</button>
             </div>
         </div>
-
     </div>
 </footer>
+
 
 
 
