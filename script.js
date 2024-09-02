@@ -34,6 +34,30 @@ const products = [
     // Add more products as needed
 ];
 
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select the live chat button and chat window
+        const liveChatButton = document.getElementById('liveChatButton');
+        const liveChatWindow = document.getElementById('live-chat-window');
+
+        // Add click event listener to the live chat button
+        liveChatButton.addEventListener('click', function() {
+            // Toggle the display of the live chat window
+            if (liveChatWindow.style.display === 'none' || liveChatWindow.style.display === '') {
+                liveChatWindow.style.display = 'block';
+            } else {
+                liveChatWindow.style.display = 'none';
+            }
+        });
+
+        // Optional: Close the chat window when clicking outside of it
+        document.addEventListener('click', function(event) {
+            if (!liveChatWindow.contains(event.target) && event.target !== liveChatButton) {
+                liveChatWindow.style.display = 'none';
+            }
+        });
+    });
+
+
 const productsPerPage = 8;
 let currentPage = 1;
 let filteredProducts = [...products];
