@@ -11,20 +11,12 @@ https://www.tooplate.com/view/2127-little-fashion
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
-  --white-color:                #FFFFFF; /* Clean and versatile for backgrounds and text */
-  --primary-color:              #FF5722; /* Vibrant and attention-grabbing for call-to-actions */
-  --section-bg-color:           #F7F7F7; /* Soft, neutral background for sections */
-  --dark-color:                 #333333; /* Strong contrast for text and key elements */
-  --grey-color:                 #B0B0B0; /* Neutral grey for less prominent elements */
-  --p-color:                    #555555; /* Softer grey for paragraph text, better readability */
-  --accent-color:               #FFAB40; /* Warm accent for highlights and details */
-  --hover-color:                #E64A19; /* Slightly darker shade of the primary color for hover effects */
-  --border-color:               #E0E0E0; /* Light grey for borders and dividers */
-  --card-bg-color:              #FFFFFF; /* Background for product cards, clean and modern */
-  --button-bg-color:            #FF5722; /* Background color for buttons, matches the primary color */
-  --button-text-color:          #FFFFFF; /* White text on buttons for high contrast */
-  --footer-bg-color:            #F1F1F1; /* Light grey background for the footer */
-  --footer-text-color:          #666666; /* Dark grey for footer text */
+ --white-color:                #FFFFFF;
+  --primary-color:              #FF4400;
+  --section-bg-color:           #f0f8ff;
+  --dark-color:                 #000000;
+  --grey-color:                 #d0d1d1;
+  --p-color:                    #717275;
 }
 
   --body-font-family:           'Inter', sans-serif;
