@@ -32,7 +32,11 @@ const products = [
 ];
 
     // Add more products as needed
-];
+    document.getElementById('liveChatButton').addEventListener('click', function() {
+        var chatWindow = document.getElementById('live-chat-window');
+        chatWindow.style.display = (chatWindow.style.display === 'none' || chatWindow.style.display === '') ? 'block' : 'none';
+    });
+
 
     document.addEventListener('DOMContentLoaded', function() {
         // Select the live chat button and chat window
