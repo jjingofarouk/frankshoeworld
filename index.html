@@ -1,4 +1,4 @@
-#<!#doctype html>
+=#<!#doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -309,7 +309,8 @@
 
 
     
-    <section class="slick-slideshow" aria-label="Welcome to Frank Shoe World">   =
+<section class="slick-slideshow" aria-label="Welcome to Frank Shoe World">
+
     <!-- Slide 1: Main Promotional Slide -->
     <div class="slick-custom">
         <img src="face1.jpg" class="img-fluid" alt="Latest collection of trendy footwear at Frank Shoe World" loading="eager">
@@ -329,7 +330,7 @@
                         <div class="cta-group">
                             <a href="collections/new-arrivals" class="btn custom-btn">Shop New Arrivals</a>
                             <div class="promo-tags mt-3">
-                                <span class="promo-tag"><i class="fas fa-check-circle"></i> Free Delivery in Kampala</span>
+                                <span class="promo-tag"><i class="fas fa-truck"></i> Free Delivery in Kampala</span>
                                 <span class="promo-tag"><i class="fas fa-shield-alt"></i> Genuine Products</span>
                             </div>
                         </div>
@@ -339,7 +340,7 @@
         </div>
     </div>
 
-    <!-- Slide 2: Seasonal Collections -->
+    <!-- Slide 2: Seasonal Collections with Discounts -->
     <div class="slick-custom">
         <img src="face2.jpg" class="img-fluid" alt="Seasonal collection showcase" loading="lazy">
 
@@ -369,9 +370,9 @@
         </div>
     </div>
 
-    <!-- Slide 3: Brand Story & Trust -->
+    <!-- Slide 3: Brand Story & Trust Indicators -->
     <div class="slick-custom">
-        <img src="face1.jpg" class="img-fluid" alt="=Store showcase" loading="lazy">
+        <img src="partners.jpg" class="img-fluid" alt="Store showcase" loading="lazy">
 
         <div class="slick-bottom">
             <div class="container">
@@ -381,8 +382,7 @@
                         <h2 class="slick-title">Uganda's Premier Footwear Destination</h2>
                         
                         <p class="lead text-white mt-lg-3 mb-lg-5">
-                            Serving Kampala for over 10 years with authentic brands and 
-                            unmatched customer service. Visit any of our 5 locations.
+                            Serving Kampala for over 10 years with authentic brands and unmatched customer service. Visit any of our 5 locations.
                         </p>
 
                         <div class="trust-indicators mb-4">
@@ -406,28 +406,78 @@
         </div>
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- New Slide 4: Customer Reviews and Social Proof -->
+    <div class="slick-custom">
+        <img src="reviews.jpg" class="img-fluid" alt="Customer reviews" loading="lazy">
 
+        <div class="slick-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-10">
+                        <span class="promotion-badge">Customer Favorites</span>
+                        <h2 class="slick-title">See Why Our Customers Love Us</h2>
+                        
+                        <p class="lead text-white mt-lg-3 mb-lg-5">
+                            Don’t just take our word for it. Hear from real customers who have found their perfect fit at Frank Shoe World.
+                        </p>
 
-#
-    <!-- Custom Navigation -->
-    <div class="slick-custom-nav">
-        <div class="container">
-            <div class="nav-wrapper">
-                <button class="prev-arrow" aria-label="Previous slide">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                
-                <div class="slick-dots-custom"></div>
-                
-                <button class="next-arrow" aria-label="Next slide">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+                        <div class="customer-review">
+                            <blockquote class="review-text">"Best shoe shopping experience in Kampala! Quality shoes and fantastic customer service." - <strong>Jane A.</strong></blockquote>
+                        </div>
+
+                        <a href="testimonials" class="btn custom-btn">Read More Reviews</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- New Slide 5: Featured Product with Highlights -->
+    <div class="slick-custom">
+        <img src="featured-product.jpg" class="img-fluid" alt="Featured shoe product" loading="lazy">
+
+        <div class="slick-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-10">
+                        <span class="promotion-badge">Best Seller</span>
+                        <h2 class="slick-title">Top Choice of the Month</h2>
+                        
+                        <p class="lead text-white mt-lg-3 mb-lg-5">
+                            Discover the shoe our customers can't get enough of. Perfect blend of style, durability, and comfort for everyday wear.
+                        </p>
+
+                        <div class="product-details">
+                            <span class="product-name">Classic Leather Loafers</span>
+                            <span class="product-price">UGX 120,000</span>
+                        </div>
+
+                        <a href="product/featured" class="btn custom-btn">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
+
+<!-- Slick Carousel Initialization Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.slick-slideshow').slick({
+            autoplay: true,
+            autoplaySpeed: 5000,
+            dots: true,
+            arrows: true,
+            fade: true,
+            cssEase: 'linear'
+        });
+    });
+</script>
+
+
 
             <section class="about section-padding">
                 <div class="container">
