@@ -175,23 +175,87 @@
     <button type="button" class="btn btn-link btn-sm mt-2">Clear Price Range</button>
 </div>
 
-                            <!-- Size Filter -->
-                            <div class="mb-4">
-                                <h6>Size</h6>
-                                <div class="btn-group d-flex flex-wrap gap-2">
-                                    <input type="radio" class="btn-check" name="size" id="size39" autocomplete="off">
-                                    <label class="btn btn-outline-secondary btn-sm" for="size39">39</label>
+                 <!-- Size Filter -->
+<div class="mb-4">
+    <h6>Size</h6>
+    
+    <!-- Tabs for US, UK, and EU sizes -->
+    <ul class="nav nav-tabs mb-2" id="sizeTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="us-tab" data-bs-toggle="tab" data-bs-target="#us" type="button" role="tab" aria-controls="us" aria-selected="true">US</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="uk-tab" data-bs-toggle="tab" data-bs-target="#uk" type="button" role="tab" aria-controls="uk" aria-selected="false">UK</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="eu-tab" data-bs-toggle="tab" data-bs-target="#eu" type="button" role="tab" aria-controls="eu" aria-selected="false">EU</button>
+        </li>
+    </ul>
 
-                                    <input type="radio" class="btn-check" name="size" id="size40" autocomplete="off">
-                                    <label class="btn btn-outline-secondary btn-sm" for="size40">40</label>
+    <!-- Tab Content for Sizes -->
+    <div class="tab-content" id="sizeTabContent">
 
-                                    <input type="radio" class="btn-check" name="size" id="size41" autocomplete="off">
-                                    <label class="btn btn-outline-secondary btn-sm" for="size41">41</label>
+        <!-- US Sizes -->
+        <div class="tab-pane fade show active" id="us" role="tabpanel" aria-labelledby="us-tab">
+            <div class="btn-group d-flex flex-wrap gap-2">
+                <input type="radio" class="btn-check" name="size" id="us8" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="us8">8</label>
 
-                                    <input type="radio" class="btn-check" name="size" id="size42" autocomplete="off">
-                                    <label class="btn btn-outline-secondary btn-sm" for="size42">42</label>
-                                </div>
-                            </div>
+                <input type="radio" class="btn-check" name="size" id="us9" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="us9">9</label>
+
+                <input type="radio" class="btn-check" name="size" id="us10" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="us10">10</label>
+
+                <input type="radio" class="btn-check" name="size" id="us11" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="us11">11</label>
+
+                <input type="radio" class="btn-check" name="size" id="us12" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="us12">12</label>
+            </div>
+        </div>
+
+        <!-- UK Sizes -->
+        <div class="tab-pane fade" id="uk" role="tabpanel" aria-labelledby="uk-tab">
+            <div class="btn-group d-flex flex-wrap gap-2">
+                <input type="radio" class="btn-check" name="size" id="uk7" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="uk7">7</label>
+
+                <input type="radio" class="btn-check" name="size" id="uk8" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="uk8">8</label>
+
+                <input type="radio" class="btn-check" name="size" id="uk9" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="uk9">9</label>
+
+                <input type="radio" class="btn-check" name="size" id="uk10" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="uk10">10</label>
+
+                <input type="radio" class="btn-check" name="size" id="uk11" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="uk11">11</label>
+            </div>
+        </div>
+
+        <!-- EU Sizes -->
+        <div class="tab-pane fade" id="eu" role="tabpanel" aria-labelledby="eu-tab">
+            <div class="btn-group d-flex flex-wrap gap-2">
+                <input type="radio" class="btn-check" name="size" id="eu39" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="eu39">39</label>
+
+                <input type="radio" class="btn-check" name="size" id="eu40" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="eu40">40</label>
+
+                <input type="radio" class="btn-check" name="size" id="eu41" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="eu41">41</label>
+
+                <input type="radio" class="btn-check" name="size" id="eu42" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="eu42">42</label>
+
+                <input type="radio" class="btn-check" name="size" id="eu43" autocomplete="off">
+                <label class="btn btn-outline-secondary btn-sm" for="eu43">43</label>
+            </div>
+        </div>
+    </div>
+</div>
 
                    <!-- Brand Filter -->
 <div class="mb-4">
