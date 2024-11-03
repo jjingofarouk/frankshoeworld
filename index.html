@@ -1,4 +1,4 @@
-<!#doctype html>
+#<!#doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -89,7 +89,229 @@ https://www.tooplate.com/view/2127-little-fashion
                 </div>
             </nav>
 
+
 <section class="slick-slideshow" aria-label="Welcome to Frank Shoe World">   
+        <style>
+        /* Base styles */
+        .slick-slideshow {
+            position: relative;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .slick-custom {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+        }
+
+        .slick-custom img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        /* Content positioning */
+        .slick-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 120px 0 100px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        /* Typography */
+        .promotion-badge {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .slick-title {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        /* CTA Styles */
+        .custom-btn {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #ff6b6b;
+        }
+
+        .custom-btn:hover {
+            background: transparent;
+            color: #ff6b6b;
+        }
+
+        .custom-btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .custom-btn-outline:hover {
+            background: white;
+            color: #000;
+        }
+
+        /* Promo tags */
+        .promo-tags {
+            display: flex;
+            gap: 20px;
+        }
+
+        .promo-tag {
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .promo-tag i {
+            color: #ff6b6b;
+            margin-right: 5px;
+        }
+
+        /* Price tags */
+        .featured-price-tag {
+            background: rgba(255,255,255,0.1);
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .was-price {
+            color: #999;
+            text-decoration: line-through;
+            margin-right: 15px;
+        }
+
+        .now-price {
+            color: #ff6b6b;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Trust indicators */
+        .rating {
+            color: white;
+        }
+
+        .rating i {
+            color: #ffd700;
+            margin-right: 2px;
+        }
+
+        .rating-text {
+            margin-left: 10px;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        .slick-custom-nav {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        .prev-arrow,
+        .next-arrow {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .prev-arrow:hover,
+        .next-arrow:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+        .slick-dots-custom {
+            display: flex;
+            gap: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #ff6b6b;
+            transform: scale(1.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .slick-custom {
+                height: 80vh;
+            }
+
+            .slick-title {
+                font-size: 2.5rem;
+            }
+
+            .lead {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .slick-custom {
+                height: 70vh;
+            }
+
+            .promo-tags {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .cta-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .custom-btn {
+                text-align: center;
+            }
+        }
+    </style>	
+    
+    
     <!-- Slide 1: Main Promotional Slide -->
     <div class="slick-custom">
         <img src="hero-1.jpg" class="img-fluid" alt="Latest collection of trendy footwear at Frank Shoe World" loading="eager">
@@ -186,6 +408,89 @@ https://www.tooplate.com/view/2127-little-fashion
         </div>
     </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    // Initialize custom dots
+    let dotsHtml = '';
+    $('.slick-custom').each(function(index) {
+        dotsHtml += `<button class="dot ${index === 0 ? 'active' : ''}" data-slide="${index}" aria-label="Go to slide ${index + 1}"></button>`;
+    });
+    $('.slick-dots-custom').html(dotsHtml);
+
+    // Initialize Slick Slider
+    $('.slick-slideshow').slick({
+        dots: false,
+        infinite: true,
+        speed: 800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        fade: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+        prevArrow: $('.prev-arrow'),
+        nextArrow: $('.next-arrow'),
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    adaptiveHeight: true
+                }
+            }
+        ]
+    });
+
+    // Custom dots functionality
+    $('.dot').click(function() {
+        let slideIndex = $(this).data('slide');
+        $('.slick-slideshow').slick('slickGoTo', slideIndex);
+        updateDots(slideIndex);
+    });
+
+    // Update dots on slide change
+    $('.slick-slideshow').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        updateDots(nextSlide);
+    });
+
+    function updateDots(activeIndex) {
+        $('.dot').removeClass('active');
+        $(`.dot[data-slide="${activeIndex}"]`).addClass('active');
+    }
+
+    // Keyboard navigation
+    $(document).keydown(function(e) {
+        if (e.keyCode === 37) { // Left arrow
+            $('.slick-slideshow').slick('slickPrev');
+        }
+        if (e.keyCode === 39) { // Right arrow
+            $('.slick-slideshow').slick('slickNext');
+        }
+    });
+
+    // Pause autoplay on hover
+    $('.slick-slideshow').hover(
+        function() { $(this).slick('slickPause'); },
+        function() { $(this).slick('slickPlay'); }
+    );
+
+    // Add touch swiping announcement for screen readers
+    $('.slick-slideshow').append('<div class="sr-only" aria-live="polite">Swipe left or right to navigate slides</div>');
+
+    // Improve loading performance
+    const images = document.querySelectorAll('.slick-custom img');
+    images.forEach((img, index) => {
+        if (index === 0) {
+            img.setAttribute('loading', 'eager');
+        } else {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
+});
+</script>
+#
     <!-- Custom Navigation -->
     <div class="slick-custom-nav">
         <div class="container">
