@@ -68,25 +68,25 @@
         <section class="mb-5">
             <h2 class="mb-4">Our Collection</h2>
             <div class="row">
-                <!-- Filters Column (Unchanged) -->
+                <!-- Filters Column -->
                 <div class="col-md-3">
                     <h3>Filter by:</h3>
-                    <form>
+                    <form id="filter-form">
                         <h4>Category</h4>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="sneakers">
+                            <input class="form-check-input" type="checkbox" value="sneakers" id="sneakers">
                             <label class="form-check-label" for="sneakers">Sneakers</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="formal">
+                            <input class="form-check-input" type="checkbox" value="formal" id="formal">
                             <label class="form-check-label" for="formal">Formal</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="casual">
+                            <input class="form-check-input" type="checkbox" value="casual" id="casual">
                             <label class="form-check-label" for="casual">Casual</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="children">
+                            <input class="form-check-input" type="checkbox" value="children" id="children">
                             <label class="form-check-label" for="children">Children's</label>
                         </div>
 
@@ -101,20 +101,20 @@
                         </div>
 
                         <h4 class="mt-4">Size</h4>
-                        <select class="form-select" aria-label="Size select">
-                            <option selected>Select size</option>
-                            <option value="1">US 6</option>
-                            <option value="2">US 7</option>
-                            <option value="3">US 8</option>
-                            <option value="4">US 9</option>
-                            <option value="5">US 10</option>
+                        <select class="form-select" id="size-select">
+                            <option value="">Select size</option>
+                            <option value="US 6">US 6</option>
+                            <option value="US 7">US 7</option>
+                            <option value="US 8">US 8</option>
+                            <option value="US 9">US 9</option>
+                            <option value="US 10">US 10</option>
                         </select>
 
                         <button type="submit" class="btn btn-primary mt-4">Apply Filters</button>
                     </form>
                 </div>
 
-                <!-- Products Column (Dynamically Loaded) -->
+                <!-- Products Column -->
                 <div class="col-md-9">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <div>
@@ -132,12 +132,12 @@
                         </div>
                     </div>
 
-                    <!-- Product Grid (Dynamically Populated) -->
+                    <!-- Product Grid -->
                     <div class="row" id="product-grid">
                         <!-- Products will be loaded here -->
                     </div>
 
-                    <!-- Pagination (Dynamically Updated) -->
+                    <!-- Pagination -->
                     <nav aria-label="Product navigation" class="mt-4">
                         <ul class="pagination justify-content-center" id="pagination">
                             <!-- Pagination links will be loaded here -->
@@ -161,6 +161,7 @@
         const productsPerPage = 8;
         let currentPage = 1;
         let allProducts = [];
+        let filteredProducts = [];
 
         // Fetch products from JSON
         async function fetchProducts() {
@@ -168,6 +169,7 @@
                 const response = await fetch('products.json');
                 const data = await response.json();
                 allProducts = data.products;
+                filteredProducts = [...allProducts];
                 displayProducts(currentPage);
                 setupPagination();
             } catch (error) {
@@ -179,7 +181,7 @@
         function displayProducts(page) {
             const start = (page - 1) * productsPerPage;
             const end = start + productsPerPage;
-            const productsToShow = allProducts.slice(start, end);
+            const productsToShow = filteredProducts.slice(start, end);
 
             const productGrid = document.getElementById('product-grid');
             productGrid.innerHTML = productsToShow.map(product => `
@@ -193,7 +195,7 @@
                                 ${renderRating(product.averageRating)}
                                 <span class="text-muted ms-2">(${product.reviewsCount} reviews)</span>
                             </div>
-                            <button class="btn btn-primary mt-3">Add to Cart</button>
+                            <a href="product-detail.html?id=${product.id}" class="btn btn-primary mt-3">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -202,7 +204,7 @@
 
         // Setup pagination
         function setupPagination() {
-            const pageCount = Math.ceil(allProducts.length / productsPerPage);
+            const pageCount = Math.ceil(filteredProducts.length / productsPerPage);
             const pagination = document.getElementById('pagination');
             pagination.innerHTML = '';
 
@@ -232,6 +234,57 @@
                 ${'<i class="bi bi-star text-warning"></i>'.repeat(emptyStars)}
             `;
         }
+
+        // Filter products
+        function filterProducts() {
+            const selectedCategories = Array.from(document.querySelectorAll('#filter-form input[type="checkbox"]:checked')).map(cb => cb.value);
+            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+            const selectedSize = document.getElementById('size-select').value;
+
+            filteredProducts = allProducts.filter(product => {
+                const matchesCategory = selectedCategories.length === 0 || selectedCategories.some(cat => product.category.includes(cat));
+                const matchesPrice = product.price >= minPrice && product.price <= maxPrice;
+                const matchesSize = !selectedSize || product.specifications.sizes.includes(selectedSize);
+                return matchesCategory && matchesPrice && matchesSize;
+            });
+
+            currentPage = 1;
+            displayProducts(currentPage);
+            setupPagination();
+        }
+
+        // Sort products
+        function sortProducts(sortBy) {
+            switch (sortBy) {
+                case 'price-low-high':
+                    filteredProducts.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high-low':
+                    filteredProducts.sort((a, b) => b.price - a.price);
+                    break;
+                case 'newest':
+                    filteredProducts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+                    break;
+                case 'popularity':
+                default:
+                    filteredProducts.sort((a, b) => b.popularityScore - a.popularityScore);
+                    break;
+            }
+            currentPage = 1;
+            displayProducts(currentPage);
+            setupPagination();
+        }
+
+        // Event listeners
+        document.getElementById('filter-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            filterProducts();
+        });
+
+        document.getElementById('sort-select').addEventListener('change', (e) => {
+            sortProducts(e.target.value);
+        });
 
         // Initial load
         fetchProducts();
