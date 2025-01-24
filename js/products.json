@@ -1,0 +1,155 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "sku": "FF-SNEAK-001",
+        "name": "Canvas Men Shoes",
+        "price": 90000,
+        "currency": "UGX",
+        "category": ["men", "sneakers"],
+        "imageUrl": "images/shoes/canvas.jpg",
+        "description": "Urban-ready canvas sneakers with breathable fabric and vulcanized rubber sole for ultimate street-style comfort",
+        "averageRating": 4.5,
+        "reviewsCount": 120,
+        "stockStatus": "in-stock",
+        "specifications": {
+          "material": "Premium Canvas",
+          "sole": "Textured Rubber",
+          "closure": "Lace-up",
+          "sizes": ["US 6", "US 7", "US 8", "US 9", "US 10"],
+          "colors": ["Natural White", "Charcoal Black", "Navy Blue"],
+          "weight": "320g per shoe"
+        },
+        "tags": ["streetwear", "unisex", "lightweight"],
+        "popularityScore": 9.2,
+        "relatedProducts": [5, 7, 15],
+        "createdAt": "2024-03-15"
+      },
+      {
+        "id": 2,
+        "sku": "FF-LOAF-002",
+        "name": "Casual Loafers - Dark Brown",
+        "price": 110000,
+        "currency": "UGX",
+        "category": ["men", "casual"],
+        "imageUrl": "images/shoes/casualloafers.jpg",
+        "description": "Butter-soft leather loafers with tassel detailing and anti-slip rubber outsole for smart-casual elegance",
+        "averageRating": 4.0,
+        "reviewsCount": 85,
+        "stockStatus": "low-stock",
+        "specifications": {
+          "material": "Full-grain Leather",
+          "sole": "Flexible Rubber",
+          "closure": "Slip-on",
+          "sizes": ["US 7", "US 8", "US 9"],
+          "colors": ["Dark Mocha", "Espresso"],
+          "weight": "450g per shoe"
+        },
+        "tags": ["office-ready", "premium", "versatile"],
+        "popularityScore": 8.5,
+        "relatedProducts": [6, 16, 19],
+        "createdAt": "2024-02-28"
+      },
+      {
+        "id": 3,
+        "sku": "FF-DRSLF-003",
+        "name": "The Jackie Black Bit Dress Loafer",
+        "price": 400000,
+        "currency": "UGX",
+        "category": ["men", "formal"],
+        "imageUrl": "images/shoes/dress_loafers.jpg",
+        "description": "Limited edition patent leather loafers with signature metal bit detail - the ultimate power dressing statement",
+        "averageRating": 4.8,
+        "reviewsCount": 45,
+        "stockStatus": "in-stock",
+        "specifications": {
+          "material": "High-shine Patent Leather",
+          "sole": "Leather with Rubber Taps",
+          "closure": "Slip-on",
+          "sizes": ["US 8", "US 9", "US 10"],
+          "colors": ["Jet Black"],
+          "weight": "510g per shoe"
+        },
+        "tags": ["limited-edition", "luxury", "executive"],
+        "popularityScore": 9.0,
+        "relatedProducts": [6, 16, 22],
+        "createdAt": "2024-04-01"
+      },
+      {
+        "id": 4,
+        "sku": "FF-TRAIN-004",
+        "name": "Women Dance Trainers - Air Cushion Slip-On",
+        "price": 40000,
+        "currency": "UGX",
+        "category": ["women", "athletic"],
+        "imageUrl": "images/shoes/dance_trainers.jpg",
+        "description": "Cloud-light dance sneakers with memory foam insoles and 360° flex grooves for unrestricted movement",
+        "averageRating": 4.6,
+        "reviewsCount": 155,
+        "stockStatus": "in-stock",
+        "specifications": {
+          "material": "Knit Mesh",
+          "sole": "Phylon Midsole",
+          "closure": "Elastic Slip-on",
+          "sizes": ["US 5-10"],
+          "colors": ["Blush Pink", "Pearl White"],
+          "weight": "280g per shoe"
+        },
+        "tags": ["dance", "flexible", "studio-ready"],
+        "popularityScore": 8.9,
+        "relatedProducts": [8, 10, 18],
+        "createdAt": "2024-03-10"
+      },
+      {
+        "id": 5,
+        "sku": "FF-OTDR-005",
+        "name": "Men's Outdoor Casual Sneakers",
+        "price": 60000,
+        "currency": "UGX",
+        "category": ["men", "outdoor"],
+        "imageUrl": "images/shoes/leather_loafer.jpg",
+        "description": "Weather-resistant trail sneakers with aggressive tread pattern and quick-dry lining for rugged adventures",
+        "averageRating": 4.3,
+        "reviewsCount": 92,
+        "stockStatus": "in-stock",
+        "specifications": {
+          "material": "Ripstop Nylon",
+          "sole": "Vibram Rubber",
+          "closure": "Speed Lacing",
+          "sizes": ["US 7-11"],
+          "colors": ["Olive Green", "Graphite"],
+          "weight": "410g per shoe"
+        },
+        "tags": ["hiking", "all-terrain", "water-resistant"],
+        "popularityScore": 8.1,
+        "relatedProducts": [1, 15, 23],
+        "createdAt": "2024-02-15"
+      },
+
+      {
+        "id": 24,
+        "sku": "FF-KIDS-024",
+        "name": "Nautica Kids Sneakers Shoes",
+        "price": 35000,
+        "currency": "UGX",
+        "category": ["children", "athletic"],
+        "imageUrl": "images/shoes/nautica.jpg",
+        "description": "Marine-inspired sneakers with reflective details and reinforced toe caps for active kids",
+        "averageRating": 3.8,
+        "reviewsCount": 35,
+        "stockStatus": "in-stock",
+        "specifications": {
+          "material": "Breathable Mesh",
+          "sole": "Flexible EVA",
+          "closure": "Hook-and-Loop",
+          "sizes": ["US 1-5"],
+          "colors": ["Navy/White", "Red/Black"],
+          "weight": "180g per shoe"
+        },
+        "tags": ["kids", "school", "playground"],
+        "popularityScore": 7.2,
+        "relatedProducts": [21, 22, 23],
+        "createdAt": "2024-04-10"
+      }
+    ]
+  }

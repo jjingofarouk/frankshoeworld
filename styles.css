@@ -1,0 +1,140 @@
+/* Styles for pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.page-btn {
+    margin: 0 5px;
+    padding: 10px 20px; /* Match the padding of the live chat button */
+    border: none; /* Remove border to match the live chat button */
+    border-radius: 50px; /* Rounded corners */
+    background-color: #f1f1f1; /* Background color */
+    color: #333; /* Text color */
+    cursor: pointer;
+    font-size: 16px; /* Font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for 3D effect */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    position: relative;
+    z-index: 1000; /* Ensure button is on top */
+}
+
+.page-btn.active {
+    background-color: #333; /* Active button background */
+    color: #fff; /* Active button text color */
+}
+
+.page-btn:hover {
+    background-color: #ddd; /* Hover background color */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.page-btn::after {
+    content: ''; /* Create pseudo-element for animation */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s; /* Animate pseudo-element */
+    border-radius: 50%;
+    z-index: 0; /* Place behind the button text */
+    transform: translate(-50%, -50%);
+}
+
+.page-btn:hover::after {
+    width: 400%;
+    height: 400%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+}
+:root {
+    --white-color: #FFFFFF;
+    --primary-color: #FF4400;
+    --section-bg-color: #f0f8ff;
+    --dark-color: #000000;
+    --grey-color: #d0d1d1;
+    --p-color: #717275;
+}
+
+.site-footer {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.site-footer h4, 
+.site-footer h5 {
+    color: var(--white-color);
+}
+
+.site-footer p {
+    color: var(--p-color);
+}
+
+.site-footer a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.site-footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.site-footer ul li {
+    margin-bottom: 10px;
+}
+
+.site-footer .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.site-footer .btn-primary:hover {
+    background-color: darken(var(--primary-color), 10%);
+    border-color: darken(var(--primary-color), 10%);
+}
+
+.site-footer .btn-light {
+    background-color: var(--white-color);
+    border-color: var(--grey-color);
+}
+
+.site-footer .btn-light:hover {
+    background-color: var(--grey-color);
+    border-color: var(--grey-color);
+}
+
+.site-footer .card {
+    background-color: var(--white-color);
+}
+
+.site-footer .card-header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.site-footer .card-body {
+    color: var(--p-color);
+}
+
+.site-footer .product-p {
+    color: var(--p-color);
+}
+
+footer .container {
+    padding: 0 15px;
+}
+
+footer .section {
+    background-color: var(--section-bg-color);
+    padding: 30px 15px;
+}

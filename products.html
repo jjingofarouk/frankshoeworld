@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Discover a wide range of quality footwear at Frank Fashions">
+    <meta name="author" content="Frank Fashions">
+    <title>Frank Fashions - Footwear Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="css/tooplate-little-fashion.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container my-5">
+        <!-- Navigation (Unchanged) -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand" href="index.html">
+                    <strong><span>Frank</span> Fashions</strong>
+                </a>
+
+                <div class="d-lg-none">
+                    <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+                    <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Story</a></li>
+                        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+
+                    <div class="d-none d-lg-block">
+                        <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+                        <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header (Unchanged) -->
+        <header class="site-header section-padding d-flex justify-content-center align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-12">
+                        <h1>
+                            <span class="d-block text-primary">Discover Our Range of</span>
+                            <span class="d-block text-dark">Quality Footwear</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Products Section (Dynamically Loaded) -->
+        <section class="mb-5">
+            <h2 class="mb-4">Our Collection</h2>
+            <div class="row">
+                <!-- Filters Column (Unchanged) -->
+                <div class="col-md-3">
+                    <h3>Filter by:</h3>
+                    <form>
+                        <h4>Category</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="sneakers">
+                            <label class="form-check-label" for="sneakers">Sneakers</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="formal">
+                            <label class="form-check-label" for="formal">Formal</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="casual">
+                            <label class="form-check-label" for="casual">Casual</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="children">
+                            <label class="form-check-label" for="children">Children's</label>
+                        </div>
+
+                        <h4 class="mt-4">Price Range</h4>
+                        <div class="mb-3">
+                            <label for="minPrice" class="form-label">Min Price</label>
+                            <input type="number" class="form-control" id="minPrice" placeholder="0">
+                        </div>
+                        <div class="mb-3">
+                            <label for="maxPrice" class="form-label">Max Price</label>
+                            <input type="number" class="form-control" id="maxPrice" placeholder="1000000">
+                        </div>
+
+                        <h4 class="mt-4">Size</h4>
+                        <select class="form-select" aria-label="Size select">
+                            <option selected>Select size</option>
+                            <option value="1">US 6</option>
+                            <option value="2">US 7</option>
+                            <option value="3">US 8</option>
+                            <option value="4">US 9</option>
+                            <option value="5">US 10</option>
+                        </select>
+
+                        <button type="submit" class="btn btn-primary mt-4">Apply Filters</button>
+                    </form>
+                </div>
+
+                <!-- Products Column (Dynamically Loaded) -->
+                <div class="col-md-9">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <div>
+                            <label for="sort-select" class="me-2">Sort by:</label>
+                            <select id="sort-select" class="form-select d-inline-block w-auto">
+                                <option value="popularity">Popularity</option>
+                                <option value="price-low-high">Price: Low to High</option>
+                                <option value="price-high-low">Price: High to Low</option>
+                                <option value="newest">Newest Arrivals</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button class="btn btn-outline-secondary me-2" id="grid-view"><i class="bi bi-grid"></i></button>
+                            <button class="btn btn-outline-secondary" id="list-view"><i class="bi bi-list"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product Grid (Dynamically Populated) -->
+                    <div class="row" id="product-grid">
+                        <!-- Products will be loaded here -->
+                    </div>
+
+                    <!-- Pagination (Dynamically Updated) -->
+                    <nav aria-label="Product navigation" class="mt-4">
+                        <ul class="pagination justify-content-center" id="pagination">
+                            <!-- Pagination links will be loaded here -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Unchanged) -->
+    <footer class="site-footer bg-dark text-light py-5">
+        <div class="container">
+            <!-- Footer content remains exactly the same -->
+        </div>
+    </footer>
+
+    <!-- JavaScript to Load Products -->
+    <script>
+        // Configuration
+        const productsPerPage = 8;
+        let currentPage = 1;
+        let allProducts = [];
+
+        // Fetch products from JSON
+        async function fetchProducts() {
+            try {
+                const response = await fetch('products.json');
+                const data = await response.json();
+                allProducts = data.products;
+                displayProducts(currentPage);
+                setupPagination();
+            } catch (error) {
+                console.error('Error loading products:', error);
+            }
+        }
+
+        // Display products for current page
+        function displayProducts(page) {
+            const start = (page - 1) * productsPerPage;
+            const end = start + productsPerPage;
+            const productsToShow = allProducts.slice(start, end);
+
+            const productGrid = document.getElementById('product-grid');
+            productGrid.innerHTML = productsToShow.map(product => `
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="${product.imageUrl}" class="card-img-top product-image" alt="${product.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text text-primary">${product.price.toLocaleString()} ${product.currency}</p>
+                            <div class="rating">
+                                ${renderRating(product.averageRating)}
+                                <span class="text-muted ms-2">(${product.reviewsCount} reviews)</span>
+                            </div>
+                            <button class="btn btn-primary mt-3">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Setup pagination
+        function setupPagination() {
+            const pageCount = Math.ceil(allProducts.length / productsPerPage);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            for (let i = 1; i <= pageCount; i++) {
+                const li = document.createElement('li');
+                li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+                li.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentPage = i;
+                    displayProducts(currentPage);
+                    setupPagination();
+                });
+                pagination.appendChild(li);
+            }
+        }
+
+        // Helper function to render rating stars
+        function renderRating(rating) {
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 !== 0;
+            const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+            
+            return `
+                ${'<i class="bi bi-star-fill text-warning"></i>'.repeat(fullStars)}
+                ${halfStar ? '<i class="bi bi-star-half text-warning"></i>' : ''}
+                ${'<i class="bi bi-star text-warning"></i>'.repeat(emptyStars)}
+            `;
+        }
+
+        // Initial load
+        fetchProducts();
+    </script>
+</body>
+</html>
